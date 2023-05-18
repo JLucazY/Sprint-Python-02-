@@ -23,6 +23,7 @@ while True:
 #laço do menu       
 laco = True
 while laco == True:
+    print(f"Bem vindo {nome}!")
     while True:
         print("""
                 ------------------------
@@ -53,11 +54,13 @@ while laco == True:
         print("""Lista de serviços:
                     1 - Previsão de economia
                     2 - inspeção técnica no local
-                    3 - Instalação de painéis solares""")
+                    3 - Instalação de painéis solares
+                    4 - Voltar
+                    (Digite qualquer outro numero para encerrar)""")
         #usuário escolhe qual serviço se apropria a necessidade dele
         tipo_servico = int(input())
-        match tipo_servico:
-            case 1:
+        # match tipo_servico:
+        if tipo_servico == 1:
                 while True:
                     try:
                         conta_luz = float(input("Digite o preço de sua conta de luz: R$"))
@@ -69,7 +72,7 @@ while laco == True:
                     except ValueError:
                         print("Digite apenas números!")     
                         continue
-            case 2:
+        elif tipo_servico == 2:
                 while True:
                     print("digite o dia para a realização da inspeção")
                     try:
@@ -85,7 +88,7 @@ while laco == True:
                     except ValueError:
                         print("Digite apenas números!")
                         continue
-            case 3:
+        elif tipo_servico == 3:
                 while True:
                     try:   
                         print("Nos informe a quantidade de espaço, em m²,disponível para a instalação")
@@ -98,6 +101,11 @@ while laco == True:
                     except ValueError:
                         print("Digite apenas números")
                         continue
+        elif tipo_servico == 4:
+            continue
+        
+        else: 
+            break
                 
     if menu == 2:
         print("""
